@@ -1,0 +1,158 @@
+---
+title: "Fertility Project"
+author: "Luis Fernando Garc&iacute;a Acosta and Carlos Daniel Ruvalcaba Serrano"
+date: October 10, 2018
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Introduction
+Using R a data analysis programming language and KNN K nearest neighbors is a simple algorithm that stores all available cases and classifies new cases based on a similarity measure, we are going to analyze a dataset where 100 volunteers provide a semen sample analyzed according to the WHO 2010 criteria. Sperm concentration are related to socio-demographic data, environmental factors, health status, and life habits. The main goal is to predict whether a patient´s
+sperm quality it's ALTERED or NORMAL.<br/>
+Despite of we are going to deal with data classification, KNN application and final result interpretation.
+
+
+We hope you enjoy it!
+
+-Luis Fernando García, Carlos Daniel Ruvalcaba Serrano
+ Autonomus University of Zacatecas, Mexico.
+
+# Exploring the Dataset.
+```{r,echo=FALSE}
+```
+
+
+## Exploring the Dataset.
+The first thing to notice it's that we have 100 instances
+```{r, echo=TRUE}
+ferti_data <- read.table("fertility_Diagnosis.txt",header=TRUE,sep = ",")
+nrow(ferti_data)
+```
+The second thing to noticce it's that we have 10 attributes
+```{r,echo=TRUE}
+ncol(ferti_data)
+```
+## Exploring the dataset
+<strong>Each instance contains the next characteristics </strong>
+  <br/><br/>-Season: Season in which the analysis was performed<br/><br/>
+  -Age: Age of the patient<br/><br/>
+  -Child_Disease: If the patient had some children disease (ie , chicken pox, measles, mumps, polio)<br/><br/>
+  -Accident: If the patient had an accident or a serious trauma<br/><br/>
+  -Surge: Patient had surgical intervention<br/><br/>
+  -Fever: High fevers in the last year<br/><br/>
+  -AlcoholConsumption: Frequency of alcohol consumption<br/><br/>
+
+## Exploring the dataset
+  -Smoke: If the patient smokes<br/><br/>
+  -Hours Sitting: Number of hours spent sitting per day <br/><br/>
+  -Diagnosis: Patients sperm quality<br/><br/>
+  
+##Exploring the Dataset.
+<strong>Season</strong>
+Season describes in which season of the year the study was made.<br/><br/>
+ -Winter: -1 <br/><br/>
+ -Spring: -0.33<br/><br/>
+ -Summer: .33<br/><br/>
+ -Fall: 1<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Season)
+
+```
+
+##Exploring the Dataset.
+<strong>Age</strong>
+Age describes the age of the patient at the time of analysis. The age goes from 18 to 36<br/><br/>
+  -Age 0 to 1<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Age)
+
+```
+
+##Exploring the Dataset.
+<strong>Child_Disease</strong>
+Child_disease describes if the pateint sufferd a Childish diseases<br/><br/>
+  -Yes: 0 <br/><br/>
+  -No: 1<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Child_Disease)
+
+```
+
+
+##Exploring the Dataset.
+<strong>Accident</strong>
+Accident describes if a patient had an accident or serious trauma
+<br/><br/>
+  -Yes: 0 <br/><br/>
+  -No: 1<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Accident)
+
+```
+
+
+##Exploring the Dataset.
+<strong>Surge</strong>
+Surge describes if the patient has been Surgical intervention 
+<br/><br/>
+  -Yes: 0 <br/><br/>
+  -No: 1<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Accident)
+
+```
+
+##Exploring the Dataset.
+<strong>Fever</strong>
+<br/><br/>Fever describes if the patient has had a high fevers in the last year 
+<br/><br/>
+  -Less than three months ago: -1 <br/><br/>
+  -More than three months ago: 0<br/><br/>
+  -No: 1<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Fever)
+
+```
+##Exploring the Dataset.
+<strong>AlcoholConsumption</strong>
+<br/><br/> AlcoholConsumption describes frequency of alcohol consumption of a patient
+<br/><br/>
+  -1 : several times a day <br/><br/>
+  -2 :  every day <br/><br/>
+  -3 : several times a week <br/><br/>
+  -4 :  once a week <br/><br/>
+  -5 :  hardly ever or never <br/><br/>
+
+##Exploring the Dataset.
+AlcoholConsumption goes from 0 to 1<br/>
+```{r,echo=TRUE}
+  summary(ferti_data$AlcoholConsumption)
+```
+
+##Exploring the Dataset.
+<strong>Smoke</strong>
+<br/><br/> Smoke describes the patient's smoking habit
+<br/><br/>
+  -1 : never <br/><br/>
+   0 : occasional<br/><br/>
+   1 : daily <br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Smoke)
+```
+  
+
+## Slide with R Output
+
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
