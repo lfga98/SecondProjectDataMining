@@ -142,6 +142,27 @@ AlcoholConsumption goes from 0 to 1<br/>
   summary(ferti_data$Smoke)
 ```
   
+##Exploring the Dataset.
+<strong>Hours Sitting</strong>
+<br/><br/> Hours Sitting describes the number of hours spent sitting per day
+<br/><br/>
+  -1 : never <br/><br/>
+   0 : occasional<br/><br/>
+   1 : daily <br/><br/>
+  The hours goes from 0 to 12<br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Hours.Sitting)
+```
+##Exploring the Dataset.
+<strong>Diagnosis</strong>
+<br/><br/> The final diagnosis if the patients sperm quality is normal or altered
+<br/><br/>
+   N : Normal <br/><br/>
+   A : Altered<br/><br/>
+```{r,echo=TRUE}
+  summary(ferti_data$Diagnosis)
+```
+
 
 ## Slide with R Output
 
