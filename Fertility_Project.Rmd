@@ -164,16 +164,9 @@ AlcoholConsumption goes from 0 to 1<br/>
 ```
 
 
-## Slide with R Output
+## Distribution of the data
 
 
 ```{r cars, echo = TRUE}
-summary(cars)
+
 ```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
-
